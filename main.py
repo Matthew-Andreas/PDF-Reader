@@ -11,5 +11,11 @@ def home():
     return jsonify({'message': 'Hello from Flask!'})
 
 
+@app.route("/upload", methods=['POST'])
+def pdfToAudio():
+    file = request.files['pdfFile']
+    return jsonify({'message': 'Hello from Flask!'})
+
+
 if __name__ == "__main__":
     app.run(debug = True)
