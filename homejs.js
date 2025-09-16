@@ -32,6 +32,10 @@ document.querySelector(".button").addEventListener("click", async () => {
 
         if (response.ok) {
             const result = await response.blob();
+            const audioURL = URL.createObjectURL(result);
+
+            const player = document.getElementById("audioPlayer");
+            player.src = audioURL;
             console.log("PDF Successfully Uploaded! ", result);
         } else {
             console.error("ERROR: ", response.statusText);
