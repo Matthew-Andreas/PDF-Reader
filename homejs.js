@@ -31,7 +31,7 @@ document.querySelector(".button").addEventListener("click", async () => {
         });
 
         if (response.ok) {
-            const result = await response.json();
+            const result = await response.blob();
             console.log("PDF Successfully Uploaded! ", result);
         } else {
             console.error("ERROR: ", response.statusText);
